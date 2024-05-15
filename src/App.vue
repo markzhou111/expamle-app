@@ -1,17 +1,20 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <MultiUpload />
+    <!-- <TabNav /> -->
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+// import HelloWorld from './components/HelloWorld.vue'
+import MultiUpload from '@/components/multi-upload/index.vue'
+import TabNav from '@/components/TabNav/index.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    MultiUpload,
+    TabNav
   }
 }
 </script>
@@ -23,6 +26,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 30px;
+  margin-left: 30px;
 }
 </style>
