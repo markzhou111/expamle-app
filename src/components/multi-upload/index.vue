@@ -71,6 +71,17 @@
 <script>
 import { mapState, mapMutations } from 'vuex'
 import { apiLogin, apiUploadImg, apiNewPic } from '@/api/user'
+
+function getYearDay() {
+  const currentYear = new Date().getFullYear().toString()
+  // 今天减今年的第一天（xxxx年01月01日）
+  const hasTimestamp = new Date() - new Date(currentYear)
+  // 86400000 = 24 * 60 * 60 * 1000
+  const hasDays = Math.ceil(hasTimestamp / 86400000)
+  console.log('今天是%s年中的第%s天', currentYear, hasDays)
+  return hasDays
+}
+
   export default {
     name: 'multi-upload',
     data() {
@@ -78,7 +89,7 @@ import { apiLogin, apiUploadImg, apiNewPic } from '@/api/user'
         form: {
           tukuType: ''
         },
-        currPeriod: '129',
+        currPeriod: getYearDay(),
         fileList: [],
         tableData: [],
         fileIndex: 0
