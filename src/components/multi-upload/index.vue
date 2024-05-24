@@ -77,7 +77,7 @@ function getYearDay() {
   // 今天减今年的第一天（xxxx年01月01日）
   const hasTimestamp = new Date() - new Date(currentYear)
   // 86400000 = 24 * 60 * 60 * 1000
-  const hasDays = Math.ceil(hasTimestamp / 86400000)
+  const hasDays = Math.ceil(hasTimestamp / 86400000) + 1
   console.log('今天是%s年中的第%s天', currentYear, hasDays)
   return hasDays
 }
